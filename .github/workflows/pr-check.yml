@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check empty files
     steps:
+      - uses: actions/checkout@v3
       - name: Checking
         run: |
           if find . -name "*.py" -type f -empty | grep ".*"; then
