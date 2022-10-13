@@ -1,0 +1,14 @@
+on: [push, pull_request]
+
+jobs:
+  custom_test:
+    runs-on: ubuntu-latest
+    name: Check empty files
+    steps:
+      - name: Checking
+        uses: ./ # Uses an action in the root directory
+        run: |
+        for file in *.py;
+        do if [ ! -s $file ];
+         then echo $file; exit 1;
+        fi; done;
