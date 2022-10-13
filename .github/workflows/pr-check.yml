@@ -7,7 +7,12 @@ jobs:
     steps:
       - name: Checking
         run: |
-         for file in ./*.py ./**/*.py; \
-         do if [ -s $file ]; \
-         then echo $file; echo '$file is empty!' exit 1; \
-         fi; done;
+          is_empty_found=0
+          for file in **/*.py; \
+          do if [ ! -s $file ]; \
+          then echo $file is empty!; \
+          is_empty_found=1; \
+          fi; done; \
+          if [ $is_empty_found -eq 1 ]; \
+          then exit 1; \
+          fi;
