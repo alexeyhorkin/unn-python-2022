@@ -10,4 +10,5 @@ jobs:
          for file in *.py; \
          do if [ ! -s $file ]; \
          then echo $file; exit 1; \
-         fi; done;
+         fi; done; \
+         echo "123"
