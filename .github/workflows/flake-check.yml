@@ -23,6 +23,7 @@ jobs:
         python -m pip install wemake-python-styleguide
     - name: Lint with flake8
       run: |
+        git --version
         echo Checking files:
-        git diff --name-only main...HEAD
-        git diff --name-only main...HEAD  |  xargs -I {} flake8 --count --statistics {}
+        git diff --name-only main...HEAD | grep *.py
+        git diff --name-only main...HEAD | grep *.py | xargs -I {} flake8 --count --statistics {}
