@@ -6,7 +6,6 @@ jobs:
     name: Check empty files
     steps:
       - name: Checking
-        uses: ./ # Uses an action in the root directory
         run: |
          for file in *.py; \
          do if [ ! -s $file ]; \
