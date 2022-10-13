@@ -1,3 +1,5 @@
+name: Empty files checking
+
 on:
   push:
     branches: [ main ]
