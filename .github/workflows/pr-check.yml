@@ -8,7 +8,6 @@ jobs:
       - name: Checking
         run: |
          for file in *.py; \
-         do echo $(pwd); \
-         if [ ! -s $file ]; \
+         do if [ -s $file ]; \
          then echo $file; exit 1; \
          fi; done;
