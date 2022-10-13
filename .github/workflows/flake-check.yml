@@ -26,5 +26,5 @@ jobs:
     - name: Lint with flake8
       run: |
         echo Checking files:
-        git diff --name-only main...HEAD | grep *.py
-        git diff --name-only main...HEAD | grep *.py | xargs -I {} flake8 --count --statistics {}
+        git diff --name-only origin/main...HEAD | grep *.py
+        git diff --name-only origin/main...HEAD | grep *.py | xargs -I {} flake8 --count --statistics {}
