@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Checking
         run: |
-          if find . -name "*.py" -type f -empty | grep ".*"; then
+          if find . -name "*.py" -type f -empty | sed '/__init__.py/d' | grep ".*"; then
               echo Empty files above 🥹 ^^
               exit 1
           else
