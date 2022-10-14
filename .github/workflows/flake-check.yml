@@ -35,3 +35,4 @@ jobs:
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "File name: ${changed_file}."
           done
+          echo 123
