@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      # - name: Check out Git repository
+      #   uses: actions/checkout@v2
+      #   with:
+      #     fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v1
@@ -35,4 +35,3 @@ jobs:
           for changed_file in ${{ steps.files.outputs.all }}; do
             echo "File name: ${changed_file}."
           done
-          echo 123
