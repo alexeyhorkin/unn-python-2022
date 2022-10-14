@@ -33,10 +33,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v14.6
 
-      - name: List all changed files
+      - name: Lint all python changed files
         run: |
-          echo ${{ steps.changed-files.outputs.all_changed_files }}
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+          flake8 $(echo ${{ steps.changed-files.outputs.all_changed_files }} | grep -P '\w*?\.py' -o | tr '\n' ' ') --count --statistics
   
